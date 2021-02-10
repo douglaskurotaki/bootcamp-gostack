@@ -1,10 +1,29 @@
 const express = require('express');
-const { uuid } = require('uuidv4')
+const { uuid, isUuid } = require('uuidv4')
 
 const app = express();
 app.use(express.json());
 
 const projects = [];
+
+function logRequests(request, response, next) {
+  const { method, url } = request;
+  const logLabel = `[${method.toUpperCase()}] ${url}`;
+  console.time(logLabel);
+  next();
+  console.timeEnd(logLabel);
+}
+
+function valideProjectId(request, response, next) {
+  const { id } = request.params;
+  if (!isUuid(id)) {
+    return response.status(400).json({ error: 'Invalid project id' }); // Tudo que vem depois nao eh executado
+  }
+  return next();
+}
+
+app.use(logRequests); // Dessa forma eh aplicado para todos os middlewares
+app.use('/projects/:id', valideProjectId); // So vai executar em rotas que sao params
 
 app.get('/projects', (request, response) => {
   const { title } = request.query;
