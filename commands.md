@@ -21,3 +21,7 @@ http://localhost:3333/projects/:id
 
 **express funciona de forma linear**
 `app.use(express.json());` -> Esse comando serve para que o express funcione com JSON
+
+----
+
+yarn add uuidv4 -> Para criação de id's
