@@ -1,5 +1,6 @@
-const soma = (a, b) => {
-  return a + b;
-}
+import { soma } from './soma';
+// const soma = (a, b) => {
+//   return a + b;
+// }
 
-console.log(soma(1, 3));
+console.log(soma(1, 2));
