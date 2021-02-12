@@ -59,3 +59,32 @@ componente sempre com inicial com letra maiúscula
   <Header />
 </>
 ```
+
+# Principais tópicos do react
+- Componentes
+- Propriedades
+- Estados
+
+## children
+
+```js
+// App.js
+<Header title="Homepage">
+  <ul>
+    <li>Homepage</li>
+    <li>Projects</li>
+  </ul>
+</Header>
+
+// Header.js
+export default function Header({ title, children }) {
+  return (
+    <header>
+      <h1>{title}</h1>
+      {children}
+    </header>
+  )
+}
+```
+
+Com essa opção de children conseguimos passar para o componente pai, os filhos que no caso são as listas passadas dentro da tag `Header`
