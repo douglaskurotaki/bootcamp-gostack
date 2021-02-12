@@ -107,3 +107,21 @@ useState retorna array com 2 posições
 A **imutabilidade** é um conceito de que nunca podemos mudar/alterar uma informação, mas sim, sempre recriar.
 Nesse caso, usarmos um push, estamos mudando a informação, e isso não é um boa prática
 Toda vez que usamos a opção 2 do useState, ele faz com que a tela de renderize novamente
+
+---
+
+`yarn add style-loader css-loader`
+css-loader -> Pega o css e trata com webpack
+style-loader -> Injeta o css no html
+
+`yarn add file-loader` -> Para carregar arquivos dentro da aplicação
+Para essa adição, precisamos novamente configurar o webpack.config.js e criar uma nova regra para o file-loader
+
+```js 
+{ 
+  test: /.*\.(gif|png|jpe?g)$/i,
+  use: {
+    loader: 'file-loader'
+  }
+}
+```
