@@ -125,3 +125,24 @@ Para essa adição, precisamos novamente configurar o webpack.config.js e criar 
   }
 }
 ```
+
+---
+
+`yarn add axios` -> Chamada de api's
+Devemos criar essa instância:
+```js
+const api = axios.create({
+  baseURL: 'http://localhost:3333'
+});
+```
+
+`useEffect` -> Dispara funções sempre que tiver uma função alterada ou quando queremos só disparmos uma função para a tela
+Ele possui dois parâmetros:
+1 - O que eu quero disparar?
+2 - Quando eu quero disparar?
+
+```js
+useEffect(() => {}, []);
+```
+
+O array, usamos normalmente as variáveis estão sendo usadas dentro da função (1 parametro), pois sempre que a variável mudar, devemos disparar novamente a função

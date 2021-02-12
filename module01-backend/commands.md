@@ -60,3 +60,11 @@ Da mesma forma que criamos uma chamada da função do middleware para executar e
 ```js
 app.use('/projects/:id', valideProjectId);
 ```
+---
+
+`yarn add cors`
+
+```js
+app.use(cors());
+```
+Isso faz com que possamos permitir que qualquer sistema consiga fazer requisição para essa aplicação
