@@ -63,7 +63,7 @@ componente sempre com inicial com letra maiúscula
 # Principais tópicos do react
 - Componentes
 - Propriedades
-- Estados
+- Estados & Imutabilidade
 
 ## children
 
@@ -88,3 +88,22 @@ export default function Header({ title, children }) {
 ```
 
 Com essa opção de children conseguimos passar para o componente pai, os filhos que no caso são as listas passadas dentro da tag `Header`
+
+## html com array
+Podemos fazer criações de tags html dessa forma:
+```js
+const projects = ['Desenvolvimento de app', 'Front-end web'];
+<ul>
+  {projects.map(project => <li key={project}>{project}</li>)}
+</ul>
+```
+
+Devemos passar na tag pai no caso o `li` a propriedade `key`, que é o valor único que não se repetirá entre os dados. O mais ideal é que seja um id único
+
+useState retorna array com 2 posições
+1 - Variável com seu valor inicial
+2 - Função para atualizarmos o valor
+
+A **imutabilidade** é um conceito de que nunca podemos mudar/alterar uma informação, mas sim, sempre recriar.
+Nesse caso, usarmos um push, estamos mudando a informação, e isso não é um boa prática
+Toda vez que usamos a opção 2 do useState, ele faz com que a tela de renderize novamente
