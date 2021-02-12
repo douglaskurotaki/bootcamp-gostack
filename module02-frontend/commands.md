@@ -35,3 +35,27 @@ A definição desse código, toda vez que eu tiver um arquivo com extensão js e
 `yarn webpack --mode development` -> Executa o webpack em modo desenvolvimento
 `yarn add webpack-dev-server -D`
 `yarn webpack serve --mode development` -> Executa o servidor do webpack
+
+---
+
+# JSX
+HTML dentro do JS (JS XML)
+componente sempre com inicial com letra maiúscula
+
+*Para melhorar a produtividade, usamos o emmet do vscode, o qual faz o autocomplete das sintaxes*
+
+```json
+// setting.json
+"emmet.syntaxProfiles": { "javascript": "jsx" },
+"emmet.includeLanguages": { "javascript": "javascriptreact" }
+``'
+
+## Fragment
+É quando queremos incluir mais de uma tag dentro de um componente, sem que precisemos colocar uma div
+
+```
+<>
+  <Header />
+  <Header />
+</>
+```
