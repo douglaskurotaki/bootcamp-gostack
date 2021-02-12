@@ -139,10 +139,14 @@ const api = axios.create({
 `useEffect` -> Dispara funções sempre que tiver uma função alterada ou quando queremos só disparmos uma função para a tela
 Ele possui dois parâmetros:
 1 - O que eu quero disparar?
-2 - Quando eu quero disparar?
+2 - Quando eu quero disparar? 
 
 ```js
 useEffect(() => {}, []);
 ```
 
 O array, usamos normalmente as variáveis estão sendo usadas dentro da função (1 parametro), pois sempre que a variável mudar, devemos disparar novamente a função
+
+---
+
+`yarn add @babel/plugin-transform-runtime --D` -> Forma de conseguirmos usar o async awat em runtime

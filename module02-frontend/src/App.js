@@ -7,13 +7,19 @@ function App() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    api.get('/projects').then(response => {
+    api.get('projects').then(response => {
       setProjects(response.data)
     });
   }, []);
 
-  function handleAddProject() {
-    setProjects([...projects, `Novo Projeto ${Date.now()}`])
+  async function handleAddProject() {
+    // setProjects([...projects, `Novo Projeto ${Date.now()}`])
+    const response = await api.post('projects', {
+      title: `Fron-end com ReacjJS ${Date.now()}`,
+      owner: 'Douglas Kurotaki'
+    });
+    const project = response.data;
+    setProjects([...projects, project])
   }
 
   return (
